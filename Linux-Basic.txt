@@ -26,3 +26,5 @@ Um ambiente e tradutor para rodar comandos no Linux. O shell mais usado é o bas
 ## Terminal
 É a interface de linha de comando (CLI)
 
+----------------------------------------------------------------------------------------------
+
