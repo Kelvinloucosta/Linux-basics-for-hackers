@@ -28,3 +28,5 @@ Um ambiente e tradutor para rodar comandos no Linux. O shell mais usado é o bas
 
 ----------------------------------------------------------------------------------------------
 
+
+
