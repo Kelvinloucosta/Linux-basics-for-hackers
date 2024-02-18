@@ -25,3 +25,4 @@ Vamos utilizar o Virtual Box para usar o Kali Linux.
 12 - Depois, será perguntado se você deseja usar um network mirror. Clica em "No"
 13 - Depois, será perguntado se você deseja instalar o GRUB, para caso voce queira selecionar outro SO ao iniciar. Clica em "Yes"
 14 - Na proxima pagina, será perguntado se você deseja instalar o GRUB automatically ou Manually, se escolher Manualmente O Kali tende a travar e exibir uma tela em branco após a instalação, selecione o drive onde o GRUB bootloader será instalado, provavelmente será algo como /dev/sda, clique em continue e pronto o Kali foi instalado.
+15 - Se voce estiver usando Kali 2020 ou posterior, voce precisará usar o comando sudo antes de qualquer comando.
