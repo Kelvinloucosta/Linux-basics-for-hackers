@@ -1,119 +1,147 @@
+# Comandos Básicos do Linux
+
+Este guia apresenta alguns comandos básicos do Linux que são úteis para navegação, pesquisa e manipulação de arquivos e diretórios.
+
 ## pwd
-O comando pwd te mostra onde voce está, em qual diretorio voce se encontra.
+O comando `pwd` mostra o diretório atual.
+
+![pwd](images/pwd.png)
 
 ## whoami
-para verificar qual usuario esta logado.
+Para verificar qual usuário está logado.
 
-## cd 
-para mudar de diretorio, é essencial saber como navegar pelos diretorios e o comando cd nos ajuda com isso. para subir um nível na estrutura do arquivo use cd .., por exemplo estou na pasta cd /etc e quero voltar para pasta /, use cd .. e teste o pwd para verificar o diretorio que se encontra.
+![whoami](images/whoami.png)
+
+## cd
+Para mudar de diretório. É essencial saber como navegar pelos diretórios, e o comando `cd` nos ajuda com isso. Para subir um nível na estrutura de diretórios, use `cd ..`, Por exemplo, se estou no diretório `/etc` e quero voltar para o diretório raiz, uso `cd ..` e verifico com `pwd` o diretório atual.
+
+![cd](images/cd.png)
 
 ## ls
-para ver conteudos de um diretorio(arquivos e subdiretorios) usamos o comando ls, semelhante ao dir do Windows.
-para obter mais informacoes sobre arquivos e diretorios, por exemplo, permissoes, proprietário, tamanho e quando foi modificado, voce pode adicionar o -l depois do ls. l significa longo, grande, extenso, como achar melhor.
-temos tambem a opcao ls -la onde voce consegue ver arquivos ocultos.
+Para listar o conteúdo de um diretório (arquivos e subdiretórios), usamos o comando `ls`, semelhante ao `dir` do Windows. Para obter mais informações sobre arquivos e diretórios, como permissões, proprietário, tamanho e data de modificação, use `ls -l`. Também temos a opção `ls -la` para visualizar arquivos ocultos.
 
 ## --help
-fornece um guia mais focado em como utilizar cada comando, aplicação ou utilitarios.
-aircrack-ng --help
-nmap -h
+Fornece um guia mais focado em como utilizar cada comando, aplicação ou utilitários.
+
+![help](images/help.png)
+
 Podemos utilizar essas 3 opcoes:
---help, -h, e -?
+`--help`, `-h`, e `-?`
 
 ## man
-ja o man fornece documentação abrangente na forma de páginas de manual, cobrindo todos os aspectos de um comando ou tópico em detalhes.
+O comando `man` fornece documentação abrangente na forma de páginas de manual, cobrindo todos os aspectos de um comando ou tópico em detalhes.
 
-man aircrack-ng
+`man aircrack-ng`
 
 ## locate
-comando para que percorrerá todo o seu sistema de arquivos e localizará todas as ocorrências dessa palavra
+Comando para percorrer todo o sistema de arquivos e localizar todas as ocorrências de uma palavra.
 
-locate aircrack-ng
+`locate aircrack-ng`
 
-O comando locate tem algumas limitacoes, os resultados podem ser grandes, a base de dados do locate é geralmente atualizado uma vez ao dia, entao se voce criar um arquivo há alguns minutos atrás somente no proximo dia voce irá localizar.
+![locate](images/locate.png)
+
+O comando `locate` tem algumas limitações; os resultados podem ser grandes e a base de dados é geralmente atualizada uma vez ao dia, ou seja se fazem apena alguns minutos desde que você criou algum arquivo e quer localizá-lo, só sera localizado usando esse comando no dia seguinte.
 
 ## whereis 
-Se voce estiver localizando por arquivos executaveis, voce pode utilizar o comando whereis para isso. Esse comando retorna ate o arquivo onde se encontra a pagina do manual. Nesse caso ele só retorna apenas os executaveis da aplicação que voce esta tentando localizar e mais a pagina do manual, mais eficiente, nao acha?
+Para localizar arquivos executáveis, use o comando `whereis`. Esse comando retorna até o arquivo onde se encontra a página do manual. Nesse caso ele só retorna apenas os executaveis da aplicação que voce esta tentando localizar e mais a pagina do manual, mais eficiente, não acha?
+
+![whereis](images/whereis.png)
 
 ## which
-ainda mais especifico, ele retorna somente a localizacao do executavel na variavel path no Linux. 
+Ainda mais específico, o comando `which` retorna somente a localização do executável na variável PATH no Linux.
+
+![which](images/which.png)
 
 ## find 
-o comando find é o mais avançado e flexível dos utilitários de busca. Ele é capaz de iniciar sua pesquisa em qualquer diretório designado e procurar vários parâmetros diferentes, incluindo, é claro, o nome do arquivo, mas também a data de criação ou modificação, o proprietário, o grupo, as permissões e o tamanho.
+O comando `find` é o mais avançado e flexível dos utilitários de busca. Ele é capaz de iniciar sua pesquisa em qualquer diretório designado e procurar vários parâmetros diferentes, incluindo, é claro, o nome do arquivo, mas também a data de criação ou modificação, o proprietário, o grupo, as permissões e o tamanho.
 
-Aqui está a sintax básica para encontrar.
+Aqui está a sintaxe básica para encontrar um arquivo.
 
-find directory opção expressao
+`find` diretório opção expressão
 
-Se quiséssemos encontrar um arquivo com o nome apache2 que é servidor web de código aberto iniciando no diretorio root, seria assim
+Se quiséssemos encontrar um arquivo com o nome apache2 que é servidor web de código aberto iniciando no diretorio root, seria assim:
 
-find / -type f -name apache2
+`find / -type f -name apache2`
 
-/ -> diretorio onde eu quero iniciar minha busca
-f -> especificar que tipo de arquivo buscar, f indica um arquivo comum.
-apache2 -> o nome do arquivo que estamos procurando.
+`/` -> diretorio onde eu quero iniciar minha busca.
 
-como podemos imaginar essa busca demoraria, uma forma de acelerar é colocar um diretorio mais especifico para busca, por exemplo em vez de / colocariamos /etc, ai buscaria abaixo dele, somente os seus subdiretorios.
+`f` -> especificar que tipo de arquivo buscar, f indica um arquivo comum.
 
-Devemos nos atentar é que o comando find mostra somente o nome exato do arquivo, por exemplo se voce estiver tentando encontrar apache2.conf essa busca anterior nao encontraria, nesse caso teriamos que usar "wildcards" nos permite a dar match em varios caracteres, por exemplo: * . , ? and [].
+`apache2` -> o nome do arquivo que estamos procurando.
 
-find /etc -type f -name apache2.
+![find](images/find.png)
 
-agora ele retorna o que se encaixa no padrão apache2.*
+como podemos imaginar essa busca demoraria, uma forma de acelerar é colocar um diretorio mais especifico para busca, por exemplo em vez de `/` colocariamos `/etc`, ai buscaria abaixo dele, somente os seus subdiretorios.
+
+![find_2](images/find_2.png)
+
+> [!NOTE]
+Devemos nos atentar que o comando `find` mostra somente o nome exato do arquivo, por exemplo se voce estiver tentando encontrar **apache2.conf** essa busca anterior não encontraria, não encontraria. Nesse caso, teríamos que usar **"wildcards"** que nos permite a dar match em varios caracteres, por exemplo: `*`, `.` , `?` and `[]`.
+
+`find /etc -type f -name apache2.`
+
+![find_3](images/find_3.png)
+
+agora ele retornará o que se encaixa no padrão `apache2.*`
 
 ## grep e ps 
-o comando grep nos auxiliar buscando palavras chaves como um filtro de busca, o comando ps é usado para mostrar informacoes sobre os processo que estao rodando na maquina, nesse caso podemos usar o comando "ps aux" junto com o grep para filtra um processo.
+o comando `grep` nos auxiliar buscando palavras chaves como um filtro de busca, o comando `ps` é usado para mostrar informações sobre os processo que estão rodando na máquina, nesse caso podemos usar o comando `"ps aux"` junto com o `grep` para filtra um processo.
 
-ps aux | grep apache2 ->  nesse caso só vai mostrar informacoes desse processo, lembre sempre de usar o "|" depois do comando seguido de grep.
+`ps aux | grep apache2` ->  nesse caso só vai mostrar informacoes desse processo, lembre sempre de usar o `"|"` depois do comando seguido de `grep`.
+
+![ps_grep](images/ps_grep.png)
 
 # Modificando arquivos e Diretorios.
 
-Existem varias maneiras de criar arquivos no Linux, vamos ver algumas delas.
+Existem várias maneiras de criar arquivos no Linux, vamos ver algumas delas.
 
 # cat
-o cat é um comando geralmente utilizado para exibir conteudos de um arquivo, mas ele tambem pode ser usado para criar arquivos pequenos. Para arquivos maiores é melhor digitar o código em um editor de texto, como o vim, emacs, leafpad, gedit ou kate e assim salva-los.
+o ´cat´ é um comando geralmente utilizado para exibir conteudos de um arquivo, mas ele tambem pode ser usado para criar arquivos pequenos. Para arquivos maiores é melhor digitar o código em um editor de texto, como o vim, emacs, leafpad, gedit ou kate e assim salva-los.
 
-Mas para criar com cat, seria:
+Mas para criar com `cat`, seria:
 
-XXXXX
+Parece confuso ao criar, mas quando voce estiver criando usando o `cat` ele vai entrar no modo interativo e, para finalizar o comando voce precisa pressionar **CTRL-D**.
 
-Parece confuso, mas quando voce estiver criando usando o cat ele vai entrar no modo interativo ai para finalizar o comando voce precisa pressionar CTRL-D.
+Para ver o conteudo utilize o `cat` seguido o nome do arquivo.
 
-Para ver o conteudo utilize o cat seguido o nome do arquivo.
+![cat](images/cat.png)
 
-Para adicionar mais conteudo no arquivo, voce pode utilizar o comando com >> e digitar o que voce quer adicionar e pressionar CTRL-D. Entao voce tera uma nova frase adicionado por exemplo.
+Para adicionar mais conteudo no arquivo, voce pode utilizar o comando com `>>` e digitar o que voce quer adicionar e pressionar **CTRL-D**. Entao voce tera uma nova frase adicionado por exemplo.
+
+![cat_2](images/cat_2.png)
 
 Se voce quiser substituir é só repetir como se estivesse criando.
 
-XXXXX
+![cat_3](images/cat_3.png)
 
 ## touch
-originalmente criado para que um usuário pudesse simplesmente "touch" em um arquivo para alterar alguns de seus detalhes, como a data em que foi criado ou modificado, mas se o arquivo nao existir ele irá criar o arquivo.
+Originalmente criado para que um usuário pudesse simplesmente `touch` em um arquivo para alterar alguns de seus detalhes, como a data em que foi criado ou modificado, mas se o arquivo nao existir ele irá criar o arquivo.
 
-touch novoarquivo
+![touch](images/touch.png)
 
 ## mkdir
 abreviacao de make directory, comando para criar diretorios.
 
-mkdir novodiretorio
+![mkdir](images/mkdir.png)
 
 ## cp 
 comando para copiar arquivos. Ele cria um arquivo duplicado na nova localizacao, ele nao move o arquivo.
 
-XXXXX
+![cp](images/cp.png)
 
-Voce pode renomear o arquivo ao copiar se voce quiser.
+Você pode renomear o arquivo ao copiar se quiser.
 
-XXXXX
+![cp_2](images/cp_2.png)
 
 ## mv
-Linux nao tem um comando especifico para renomear arquivos, com isso utilizamos o comando mv que serve tanto para mover um arquivo como para renomear.
+O Linux não tem um comando específico para renomear arquivos. Com isso, utilizamos o comando `mv` que serve tanto para mover um arquivo quanto para renomeá-lo.
 
-XXXXX
+![mv](images/mv.png)
 
 ## rm 
-para remover um arquivo voce utiliza o comando rm.
+para remover um arquivo voce utiliza o comando `rm`.
 
-XXXXX
+![rm](images/rm.png)
 
 ## rmdir
-para remover diretorios, utilizamos o rmdir, importante ressaltar que nao conseguimos remover diretorios que nao estao vazios, isso serve como segurança para nao apagar arquivos sem o conhecimento. Caso voce queira remover com conteudo no diretorio voce acrescenta o -r na frente do rmdir, tenha bastante cuidado ao utilizar.
+para remover diretorios, utilizamos o `rmdir`. É importante ressaltar que não conseguimos remover diretórios que não estão vazios, isso serve como segurança para nao apagar arquivos sem o conhecimento. Caso voce queira remover com conteudo no diretorio voce acrescenta o `-r` na frente do `rmdir`, tenha bastante cuidado ao utilizar.
