@@ -1,0 +1,4 @@
+## pwd
+O comando pwd te mostra onde voce está, em qual diretorio voce se encontra.
+
+## whoami
