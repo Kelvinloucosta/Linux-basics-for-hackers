@@ -1,8 +1,8 @@
-# Introducao dos Termos e Conceitos.
+#Introducao dos Termos e Conceitos.
 
 Antes de iniciarmos qualquer teoria sobre hacker e scripts, vamos aprender um pouco sobre alguns termos para facilitar cada passo.
 
-## Binaries
+##Binaries
 Este termo se refere a arquivos que podem ser executados, parecidos com exe do Windows. Geralmente residem no diretório /usr/bin ou /usr/sbin que incluem utilitatios como ps, cat, ls e ifconfig.
 
 ## Case sensitivity
