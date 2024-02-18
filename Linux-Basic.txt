@@ -1,8 +1,8 @@
-#Introducao dos Termos e Conceitos.
+# Introducao dos Termos e Conceitos.
 
 Antes de iniciarmos qualquer teoria sobre hacker e scripts, vamos aprender um pouco sobre alguns termos para facilitar cada passo.
 
-##Binaries
+## Binaries
 Este termo se refere a arquivos que podem ser executados, parecidos com exe do Windows. Geralmente residem no diretório /usr/bin ou /usr/sbin que incluem utilitatios como ps, cat, ls e ifconfig.
 
 ## Case sensitivity
@@ -26,7 +26,26 @@ Um ambiente e tradutor para rodar comandos no Linux. O shell mais usado é o bas
 ## Terminal
 É a interface de linha de comando (CLI)
 
-----------------------------------------------------------------------------------------------
+
+==============================================================================================================================
+
+Abra o terminal do Kali Linux que é a interface de linha de comando.
+
+# O sistema de arquivos do Linux
+
+A estrutura de arquivo do Linux é um pouco diferente do Windows, Linux nao tem uma unidade fisica C: na base do Sistema de arquivo mas, em vez disso, utiliza um sistema de arquivo logico. No topo do sistema de arquivos está a "/", que geralmente é chamado a raiz do sistema de arquivo. Com o tempo isso ficará mais claro na sua mente, vamos debater mais sobre isso.
+
+/root -> O diretório home do usuario root.
+/etc -> Em geral contem os arquivos de configuracao do Linux, arquivos que controla quando e como os programas são iniciados.
+/home -> Diretório do usuario.
+/mnt -> Onde outros sistemas de arquivos são anexados ou montados no sistema de arquivos.
+/media -> Onde CDs e dispositivo USB sao geralmente anexados ou montados.
+/bin -> Onde residem os binários dos aplicativos (O equivalente a executáveis no Microsoft Windows ou aplicativos no macOS).
+/lib -> Onde você encontrará as bibliotecas, similar aos DLLs do Windows.
+
+
+
+
 
 
 
