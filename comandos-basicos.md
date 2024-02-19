@@ -5,8 +5,7 @@ Este guia apresenta alguns comandos básicos do Linux que são úteis para naveg
 ## pwd
 O comando `pwd` mostra o diretório atual.
 
-![pwd](https://github.com/Kelvinloucosta/Linux-basics-for-hackers/blob/study-lab/pwd.png?raw=true)
-
+![pwd](https://github.com/Kelvinloucosta/Linux-basics-for-hackers/images/media/pwd.png?raw=true)
 
 ## whoami
 Para verificar qual usuário está logado.
