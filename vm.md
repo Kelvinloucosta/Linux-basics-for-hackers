@@ -1,28 +1,27 @@
 # Virtual Machine
 
-Vamos utilizar o Virtual Box para usar o Kali Linux.
+Vamos usar o VirtualBox para configurar o Kali Linux em uma máquina virtual.
 
-1 - Acesse https://www.virtualbox.org/ e faça o download do Virtual Box.
-2 - Clique em Next ate instalar o programa, nao precisa alterar nada.
-3 - Clique em "New", dê o nome para sua maquina, escolha onde será hospedada e escolha Linux e depois Debian 64 Bits.
-4 - Aloca sua memoria, nao recomendo mais do que 25% da sua RAM total.
-5 - Tamanho do disco, recomendo entre 20-25 GB se voce nao escolher o modo Dynamically Allocated.
-6 - Clique em Create.
+1. Acesse [o site do VirtualBox](https://www.virtualbox.org/) e faça o download do programa.
+2. Siga as instruções de instalação, clicando em "Next" até concluir a instalação, sem a necessidade de fazer alterações.
+3. No VirtualBox, clique em "New", dê um nome para sua máquina virtual, escolha onde ela será armazenada e selecione "Linux" como tipo e "Debian (64-bit)" como versão.
+4. Atribua memória à sua máquina virtual, mas não ultrapasse 25% da sua RAM total.
+5. Escolha o tamanho do disco rígido, recomendamos entre 20-25 GB se não optar pelo modo "Dynamically Allocated".
+6. Clique em "Create".
 
-# Instalar Kali na VM 
+# Instalando o Kali na VM
 
-1 - Clique em "Start"
-2 - O Virtual Box irá te perguntar onde encontrar o disco de inicialização, como ja fizemos o download da .ISO buscaremos essa imagem.
-3 - A maquina irá reiniciar e aparecer a parte da instalaçao do Kali, sugiro istalar o Graphical Install para iniciantes.
-4 - Caso dê algum erro pode ser que sua maquina nao esteja com Virtualização ativa na BIOS. Alem disso você provavelmente precisará desativar qualquer software de virtualização concorrente, como o Hyper-V.
-5 - Com isso confirmado, irá te perguntar qual linguagem utilizar, recomendo sempre Ingles, localização e Keyboard, depois disso irá iniciar a instalação.
-6 - De o nome ao seu host, Domain Name deixe em branco, voce precisará criar um user non-root, escolha de sua preferencia e depois a senha.
-7 - partition disk, como estamos utilizando uma virtual machine escolha "Guided use entire disk" ira receber um aviso que o disco será apagado, clique em continue.
-8 - Kali irá te perguntar se voce quer tudo em uma unica partição, como isso é lab, escolheremos essa opcao.
-9 - Seleciona "YES" para confirmar a alteração.
-10 - Clique em Next, para instalar as ferramentas.
-11 - Kali demora um tempo para instalar.
-12 - Depois, será perguntado se você deseja usar um network mirror. Clica em "No"
-13 - Depois, será perguntado se você deseja instalar o GRUB, para caso voce queira selecionar outro SO ao iniciar. Clica em "Yes"
-14 - Na proxima pagina, será perguntado se você deseja instalar o GRUB automatically ou Manually, se escolher Manualmente O Kali tende a travar e exibir uma tela em branco após a instalação, selecione o drive onde o GRUB bootloader será instalado, provavelmente será algo como /dev/sda, clique em continue e pronto o Kali foi instalado.
-15 - Se voce estiver usando Kali 2020 ou posterior, voce precisará usar o comando sudo antes de qualquer comando.
+1. Clique em "Start" para iniciar a máquina virtual.
+2. O VirtualBox solicitará o local da imagem de inicialização. Selecione a ISO do Kali Linux que você baixou.
+3. A máquina virtual reiniciará e a instalação do Kali começará. Recomendamos escolher a opção "Graphical Install" para iniciantes.
+4. Se ocorrer algum erro, verifique se a virtualização está ativada na BIOS do seu computador e desative qualquer outro software de virtualização concorrente, como o Hyper-V.
+5. Selecione a linguagem, localização e layout do teclado, depois prossiga com a instalação.
+6. Defina um nome para sua máquina, deixe o campo de nome de domínio em branco e crie um usuário não-root com uma senha.
+7. Na parte de particionamento de disco, escolha "Guided - use entire disk" para uma instalação mais simples.
+8. Confirme a seleção e aguarde a instalação do Kali.
+9. Quando solicitado sobre o uso de um mirror de rede, selecione "No".
+10. Opte por instalar o GRUB quando perguntado, para facilitar a inicialização de outros sistemas operacionais.
+11. Selecione a opção de instalar o GRUB automaticamente para evitar problemas de travamento.
+12. Após a instalação, sua máquina virtual reiniciará e o Kali estará pronto para uso.
+13. Se estiver usando Kali 2020 ou posterior, lembre-se de usar o comando `sudo` antes de qualquer comando.
+
