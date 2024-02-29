@@ -30,6 +30,46 @@ Para remover o arquivo de configuração e ao mesmo tempo o pacote usamos o coma
 
 ![purge](images/purge.png)
 
+Para remover dependencias ou bibliotecas que o *SNORT* voce pode remove-las usando o *autoremove*.
+
+![autoremove](images/autoremove.png)
+
+# Atualizando software
+Sofwares sao periodicamente atualizados, mas no nosso sistema precisamos aplicar esse *update*, a atualização simplesmente atualiza a lista de pacotes disponíveis para download no repositório.
+
+<font color="red">**Nao confuda *update* com *upgrade*, update simplesmente atualiza a lista de pacotes que estao disponiveis para download no repositorio, enquanto upgrade atualiza o pacote para versao mais recente do repositorio.**</font>
+
+Para *update* sistemas individualmente utilizamos o comand *apt-get* seguido por *update*.
+
+![update](images/update.png)
+
+Agora para *upgrade* os pacotes existentes no seu sistema, usamos o comando *apt-get* seguido por *upgrade*. Esse comando irá atualizar cada pacote no seu sistema que o *apt* conhece.
+
+![update](images/upgrade.png)
+
+# Adicionando repositorios no arquivo sources.list
+O servidor que contém o software para uma determinada distribuição do Linux é conhecido como repositórios. Cada distribuicao tem o seu próprio repositorio de software, desenvolvidade para aquela distribuicao, nao funciona muito bem com outras distribuicoes, pois podem ter o mesmo software, mas nao a mesma versao. Embora nao seja recomendado as vezes é necessario adicionar um repositorio como backup, caso nao encontre um programa especifico ele vai para o proximo repositorio, as vezes adicionamos o repositorio do Ubunto no Kali para encontrar algumas ferramentas especificas.
+
+Para adicionarmos o repositorio de uma distribuicao precisamos encontrar o arquivo **sources.list**, que voce pode encontrar no caminho */etc/apt/sources.list*, vamos usar o *leafpad* para abrir esse arquivo.
+
+![repository](images/repository.png)
+
+Algumas distribuicoes dividi os repositorios em categorias, exemplo do Debian:
+
+**main** contém software de código aberto compatível
+
+**universe** contém software de código aberto mantido pela comunidade
+
+**multiverse** contém software restrito por direitos autorais ou outras questões legais
+
+**restricted** contém drivers de dispositivo proprietários
+
+**backports** contém pacotes de versões posteriores
+
+
+
+
+
 
 
 
