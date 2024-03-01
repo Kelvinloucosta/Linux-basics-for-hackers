@@ -66,10 +66,24 @@ Algumas distribuicoes dividi os repositorios em categorias, exemplo do Debian:
 
 **backports** contém pacotes de versões posteriores
 
+Não recomendo o uso de repositórios de teste, experimentais ou instáveis em seu *sources.list* porque eles podem fazer download de software problemático para o seu sistema.
 
+As versões mais recentes do Kali não incluem mais uma ferramenta de instalação de software baseada em GUI, mas você sempre pode instalar uma com o comando apt-get. As duas ferramentas de instalação baseadas em GUI mais comuns são o Synaptic e o Gdebi. 
 
+# Instalando a parti do GIT
+Às vezes, alguns softwares não estão disponíveis nos repositórios, mas podem estar disponíveis no GitHub, que é onde estamos escrevendo o passo a passo aqui.
 
+Vamos tentar instalar o bluediving a parti do repositorio.
 
+![git](images/git.png)
+
+Podemos ver que nao existe no repositorio esse software, com isso vamos buscar e instalar a partir do *github*.
+
+Você pode ir no site do GitHub e procurar pelo nome do programa, encontrando a URL do programa vamos baixar esse programa a partir dela.
+
+![git_2](images/git_2.png)
+
+A partir daí, você pode instalar o programa baixado.
 
 
 
