@@ -123,13 +123,59 @@ Podemos utilizar multiplas permissoes no mesmo comando.
 
 Este comando adicionaria permissao de *executar (x)* tanto para usuario quanto para grupo.
 
+<font color="red">**Lembre-se, no Linux, você não pode executar um arquivo que você baixou, mas essa configuração em geral torna o seu sistema mais seguro. Quando voce baixa uma ferramenta nova, voce precisa dar permissao de executar.**
+
+**`chmod 766 nova-ferramenta`**</font>
+
+> Por default a permissao base de um arquivo é **666** e de diretórios é **777**, Podemos alterar as permissoes usando o *umask* a traducçao dessa palavra nao é legal, entenda como tira um valor ou seja subtrair.
+
+Por exemplo:
+| Arquivos novos   | Diretorios novos    |       |
+| :--:             |    :--:             | :-:   | 
+|  6 6 6 | 7 7 7   | Permissao Base no Linux     |
+| - 0 2 2 | - 0 2 2   | umask     |
+|  6 4 4 | 7 5 5  | Permissao Base no Linux     |
+
+Pode ver que subtraimos as permsissoes.
+>No Kali, como na maioria dos sistemas Debian, o umask é pré-configurado como 022, o que significa que o padrão do Kali é 644 para arquivos e 755 para diretórios. Tente digitar *umask* para ver qual valor default. Para alterar o valor default, edite o arquivo /home/nomedousuario/.profile, por exemplo adicione o valor 007 como default.
+
+![umask](images/umask.png)
+
+# Permissoes Especiais
+Existem alguns casos que precisamos que alguns usuarios tenha permissao de usuario root para executar certo tipo de arquivo, bom para isso, podemos usar um acesso temporario chamado **SUID** que basicamente faz com que qualquer usuario execute um arquivo com permissoes de **owner** mas essas permissões não se estendem além do uso desse arquivo.
+
+Para definir o bit SUID, insira um 4 antes das permissões regulares, por exemplo: 644 seria 4644. Definir o SUID em um arquivo não é algo que um usuário comum faria, mas se você quiser fazer isso, usará o comando chmod, como em `chmod 4644 nome-do-arquivo`.
+
+![suid](images/suid.png)
+
+>Podemos usar o seguinte comando para encontrar arquivos com SUID.
+
+`find / -perm -u=s -type f 2>/dev/null`
+
+### Alteração de permissões com SGID
+Agora, em vez de conceder permissões baseadas no proprietário dos arquivos, ele concede permissões com base no grupo do proprietário do arquivo.
+
+Quando o bit SGID é definido em um diretório, isso significa que os novos arquivos criados dentro desse diretório terão o grupo do diretório como grupo principal, em vez do grupo do usuário que os criou.
 
 
+Se você quiser definir o bit SUID em um arquivo, é só colocar um 2 na frente das permissões normais. Por exemplo, se as permissões forem 644, você muda para 2644. Normalmente, não é algo que um usuário comum faria, mas se precisar, é só usar o comando chmod, tipo assim: `chmod 2644 nome-do-arquivo`
 
+# Stick
+O termo "stick bit" refere-se a uma funcionalidade obsoleta no sistema de permissões de arquivos do Linux. Anteriormente, o "stick bit" era usado para controlar a exclusão de arquivos em diretórios compartilhados. No entanto, devido a mudanças nas práticas de segurança, seu uso tornou-se desatualizado e não é mais amplamente recomendado. Em resumo, o "stick bit" não é mais uma prática relevante nos sistemas operacionais modernos.
 
+>**As permissões especiais no sistema Linux têm suas vantagens e desvantagens. Por um lado, elas permitem que usuários comuns executem tarefas que exigem privilégios elevados, facilitando a operação do sistema. Por outro lado, essa funcionalidade pode ser explorada por indivíduos mal-intencionados para realizar ações prejudiciais. Em resumo, embora essas permissões ofereçam benefícios, também podem representar riscos à segurança se não forem devidamente controladas e protegidas. Por exemplo, podem ser exploradas através de técnicas de escalonamento de privilégios.**
 
+Vamos ao exemplo:
 
+`sudo find / -user root -perm -4000`
 
+![privilege_escalation](images/privilege_escalation.png)
+
+Com esse comando saberemos quais arquivos que são de propriedade do root. Como podemos ver na imagem, varios arquivo esta configurado como bit SUID, vamos navegar na pasta /usr/bin.
+
+![suid_2](images/suid_2.png)
+
+Observe que no primeiro conjunto de permissões - destinado ao proprietário do arquivo - há um "s" em vez de um "x". Isso representa o SUID configurado no Linux. Significa que qualquer pessoa que execute o arquivo terá os privilégios do usuário root, o que pode ser uma preocupação de segurança para o administrador do sistema e um potencial vetor de ataque para hackers.
 
 
 
